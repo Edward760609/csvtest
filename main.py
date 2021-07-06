@@ -1,3 +1,4 @@
+import csv
 date = []
 time = []
 logdesc = []
@@ -12,6 +13,9 @@ with open(path) as f:
         logdesc.append(s[11])
 
 fp = open("sslvpn.csv", "w+")
+csvfile = csv.writer(fp)
+csvfile.writerow(["date", "time", "static"])
+
 a = 0
 for a in range(0, len(date)):
     file = (date[a], time[a], logdesc[a])
